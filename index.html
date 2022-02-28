@@ -33,69 +33,16 @@
     <section class="container rounded">
         <!-- search input field  -->
         <div class="input-group input-group-lg p-3 w-75 mx-auto">
-            <input type="text" id="search-name" class="form-control" placeholder="Please Enter Your Desired Phone Name"
+            <input type="text" id="search-phone" class="form-control" placeholder="Please Enter Your Desired Phone Name"
                 aria-label="Please Enter Your Desired Phone Name" aria-describedby="search-button">
-            <button class="btn btn-dark" type="button" id="search-button">🔎 Search</button>
+            <button onclick="searchPhone()" class="btn btn-dark" type="button" id="search-button">🔎 Search</button>
         </div>
         <!-- show detail of phone in this section  -->
     </section>
     <!-- card section  -->
     <section class="container rounded mt-3">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 mb-3">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="d-flex justify-content-center p-3">
-                        <button type="button" class="btn btn-primary btn-sm">Show Details</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                    </div>
-                    <div class="d-flex justify-content-center p-3">
-                        <button type="button" class="btn btn-primary btn-sm">Show Details</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height action.</p>
-                    </div>
-                    <div class="d-flex justify-content-center p-3">
-                        <button type="button" class="btn btn-primary btn-sm">Show Details</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height action.</p>
-                    </div>
-                    <div class="d-flex justify-content-center p-3">
-                        <button type="button" class="btn btn-primary btn-sm">Show Details</button>
-                    </div>
-                </div>
-            </div>
+        <div id="search-result" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 mb-3">
+            
         </div>
     </section>
 
