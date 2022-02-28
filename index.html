@@ -1,31 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Khuji</title>
-    
+
     <!-- custome style  -->
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- favicon  -->
     <link rel="icon" type="image/x-icon" href="Image/1.png">
 
 </head>
-<body>
-    <section>
-        <header>
-            <h1>📱 Phone Khuji 🌍</h1>
+
+<body class="body-background">
+    <!-- header section  -->
+    <section class="container my-3 mt-2 p-3 rounded border border-1 border-dark header-section-background">
+        <header class="container">
+            <h1 class="text-center fw-bolder my-3">📱 Phone Khuji 🔍</h1>
+            <small class="text-center fst-italic d-block mt-1">Khoj the search!!!</small>
+            <hr class="border border-2 border-dark">
+            <h6 class="text-center mt-4 p-1">Here you can search your desired phone to see full details about it!!</h6>
         </header>
+    </section>
+    <!-- search section  -->
+    <section class="container rounded">
+        <!-- search input field  -->
+        <div class="input-group input-group-lg p-3 w-75 mx-auto">
+            <input type="text" id="search-name" class="form-control" placeholder="Please Enter Your Desired Phone Name"
+                aria-label="Please Enter Your Desired Phone Name" aria-describedby="search-button">
+            <button class="btn btn-dark" type="button" id="search-button">🔎 Search</button>
+        </div>
+        <!-- show detail of phone in this section  -->
+    </section>
+    <!-- card section  -->
+    <section class="container rounded mt-3">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 mb-3">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="d-flex justify-content-center p-3">
+                        <button type="button" class="btn btn-primary btn-sm">Show Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="d-flex justify-content-center p-3">
+                        <button type="button" class="btn btn-primary btn-sm">Show Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                    </div>
+                    <div class="d-flex justify-content-center p-3">
+                        <button type="button" class="btn btn-primary btn-sm">Show Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                    </div>
+                    <div class="d-flex justify-content-center p-3">
+                        <button type="button" class="btn btn-primary btn-sm">Show Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- boostrap js  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <!-- custome js  -->
     <script src="JS/app.js"></script>
 </body>
+
 </html>
