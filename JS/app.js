@@ -14,29 +14,35 @@ const searchPhone = () => {
     document.getElementById('search-result').innerHTML = '';
     // clear input field 
     searchField.value = '';
-    document.getElementById('error-message').style.display = 'none';
+
     document.getElementById('no-result-message').style.display = 'none';
     if (searchText == '') {
         document.getElementById('no-result-message').style.display = 'block';
         toggleSpinner('none');
     }
-    else{
+    else {
         const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
         fetch(url)
             .then(res => res.json())
             .then(data => displayPhones(data.data))
     }
-    
+
 
 }
 
 const displayPhones = data => {
     let searchResult = document.getElementById('search-result');
-    data.forEach(phones => {
-        console.log(phones.slug);
-        let div = document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML = `
+
+    if (data.length == 0) {
+        document.getElementById('no-result-message').style.display = 'block';
+        toggleSpinner('none');
+    }
+    else {
+        data.forEach(phones => {
+            // console.log(phones.slug);
+            let div = document.createElement('div');
+            div.classList.add('col');
+            div.innerHTML = `
         <div onclick="loadPhoneDetails('${phones.slug}')" class="card h-100 rounded-3 card-background">
               <img src="${phones.image}" class="card-img-top p-4 card-img-bg" alt="...">
                 <div class="card-body">
@@ -48,11 +54,13 @@ const displayPhones = data => {
                     </div>
         </div>
         `;
-        searchResult.appendChild(div);
+            searchResult.appendChild(div);
 
-    });
-    toggleSpinner('none');
-} 
+
+        });
+        toggleSpinner('none');
+    }
+}
 
 const loadPhoneDetails = phoneId => {
     console.log(phoneId)
