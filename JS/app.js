@@ -1,8 +1,13 @@
+const toggleSpinner = displaySpinner => {
+    document.getElementById('spinner').style.display = displaySpinner;
+}
+
 const searchPhone = () => {
     let searchField = document.getElementById('search-phone');
     let searchTextByUSer = searchField.value;
     let searchText = searchTextByUSer.toLowerCase();
-
+    // display spinner 
+    toggleSpinner('block');
     // clear input field 
     searchField.value = '';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
@@ -33,4 +38,5 @@ const displayPhones = data => {
         searchResult.appendChild(div);
 
     });
+    toggleSpinner('none');
 } 
