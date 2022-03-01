@@ -24,9 +24,10 @@
     <section class="container my-3 mt-2 p-3 rounded border border-1 border-dark header-section-background">
         <header class="container">
             <h1 class="text-center fw-bolder my-3">📱 Phone Khuji 🔍</h1>
-            <small class="text-center fst-italic d-block mt-1">Khoj the search!!!</small>
+            <small class="text-center text-success fst-italic d-block mt-1">Khoj the search!!!</small>
             <hr class="border border-2 border-dark">
-            <h6 class="text-center mt-4 p-1">Here you can search your desired phone to see full details about it!!</h6>
+            <h6 class="text-center text-primary mt-4 p-1">Here you can search your desired phone to see full details
+                about it!!</h6>
         </header>
     </section>
     <!-- search section  -->
@@ -40,19 +41,14 @@
         </div>
         <!-- show detail of phone in this section  -->
     </section>
-    <!-- detail section  -->
-    <section class="container rounded">
-        <div class="card mb-3 p-3">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+    <section class="container rounded mt-3 mb-3">
+        <!-- card detail  -->
+        <div id="phone-detail" class="row">
+
+        </div>
     </section>
     <!-- card section  -->
-    <section class="container rounded mt-3">
+    <section class="container rounded mt-4">
         <!-- spinner      -->
         <div class="loader-bg">
             <div id="spinner" class="loader">
@@ -66,7 +62,8 @@
         <p id="error-message" class="text-center text-danger">Something went wrong please try again later</p>
         <p id="no-result-message" class="text-center text-danger">Sorry there is no item with this name. Try again!!</p>
 
-        <div id="search-result" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3 mb-3">
+        <!-- card section  -->
+        <div id="search-result" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 mb-3">
 
         </div>
     </section>
