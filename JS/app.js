@@ -33,18 +33,18 @@ const searchPhone = () => {
 const displayPhones = data => {
     let searchResult = document.getElementById('search-result');
     data.forEach(phones => {
-        console.log(phones.phone_name);
+        console.log(phones.slug);
         let div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div class="card h-100 rounded-3 card-background">
+        <div onclick="loadPhoneDetails('${phones.slug}')" class="card h-100 rounded-3 card-background">
               <img src="${phones.image}" class="card-img-top p-4 card-img-bg" alt="...">
                 <div class="card-body">
                     <h4 class="card-title text-danger">Phone Brand:<span class="text-dark"> ${phones.phone_name}</span></h4>
                     <p class="card-text text-success">Model Name: <span class="text-dark"> ${phones.brand}</span></p>
                 </div>
                     <div class="d-flex justify-content-center p-3">
-                        <button type="button" class="btn btn-primary btn-sm">Show More Details</button>
+                        <button onclick="loadPhoneDetails(${phones.slug})" type="button" class="btn btn-primary btn-sm">Show More Details</button>
                     </div>
         </div>
         `;
@@ -53,3 +53,7 @@ const displayPhones = data => {
     });
     toggleSpinner('none');
 } 
+
+const loadPhoneDetails = phoneId => {
+    console.log(phoneId)
+}
