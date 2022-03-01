@@ -80,7 +80,7 @@ const displayPhoneDetail = phone => {
     div.innerHTML = `
     <div class="card rounded-3 p-3">
             <div class="row">
-                <img src="${phone.image}" class="p-2 card-image" style="height: 400px; width: 350px" alt="...">
+                <img src="${phone.image}" class="p-5 card-image" style="height: 400px; width: 350px" alt="...">
             </div>
              <div class="card-body row">
                   <h2 class="card-title text-Success">Phone Name: <span class="text-dark">${phone.brand} ${phone.name}</span></h2>
