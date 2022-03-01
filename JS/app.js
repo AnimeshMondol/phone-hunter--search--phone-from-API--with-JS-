@@ -1,3 +1,6 @@
+document.getElementById('error-message').style.display = 'none';
+document.getElementById('no-result-message').style.display = 'none';
+
 const toggleSpinner = displaySpinner => {
     document.getElementById('spinner').style.display = displaySpinner;
 }
@@ -8,12 +11,22 @@ const searchPhone = () => {
     let searchText = searchTextByUSer.toLowerCase();
     // display spinner 
     toggleSpinner('block');
+    document.getElementById('search-result').innerHTML = '';
     // clear input field 
     searchField.value = '';
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displayPhones(data.data))
+    document.getElementById('error-message').style.display = 'none';
+    document.getElementById('no-result-message').style.display = 'none';
+    if (searchText == '') {
+        document.getElementById('no-result-message').style.display = 'block';
+        toggleSpinner('none');
+    }
+    else{
+        const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => displayPhones(data.data))
+    }
+    
 
 }
 
@@ -24,8 +37,8 @@ const displayPhones = data => {
         let div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div class="card h-100 rounded-3">
-              <img src="${phones.image}" class="card-img-top p-5 bg-info" alt="...">
+        <div class="card h-100 rounded-3 card-background">
+              <img src="${phones.image}" class="card-img-top p-4 card-img-bg" alt="...">
                 <div class="card-body">
                     <h4 class="card-title text-danger">Phone Brand:<span class="text-dark"> ${phones.phone_name}</span></h4>
                     <p class="card-text text-success">Model Name: <span class="text-dark"> ${phones.brand}</span></p>
