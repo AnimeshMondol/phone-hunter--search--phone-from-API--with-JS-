@@ -142,6 +142,7 @@ const displayAllPhones = data => {
 
     if (data.length == 0) {
         document.getElementById('no-result-message').style.display = 'block';
+        document.getElementById('show-all-button').style.display = 'none';
         toggleSpinner('none');
     }
     else {
