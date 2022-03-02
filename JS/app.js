@@ -1,7 +1,8 @@
 document.getElementById('error-message').style.display = 'none';
 document.getElementById('no-result-message').style.display = 'none';
 document.getElementById('no-detail-message').style.display = 'none';
-let count = 0;
+document.getElementById('show-all-button').style.display = 'none';
+
 const toggleSpinner = displaySpinner => {
     document.getElementById('spinner').style.display = displaySpinner;
 }
@@ -34,7 +35,7 @@ const searchPhone = () => {
 
 const displayPhones = data => {
     let searchResult = document.getElementById('search-result');
-    
+
     if (data.length == 0) {
         document.getElementById('no-result-message').style.display = 'block';
         toggleSpinner('none');
@@ -42,7 +43,7 @@ const displayPhones = data => {
     else {
         data.slice(0, 20).forEach(phones => {
             // console.log(phones);
-            
+
             let div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
@@ -59,13 +60,14 @@ const displayPhones = data => {
         `;
             searchResult.appendChild(div);
         });
-
+        document.getElementById('show-all-button').style.display = 'block';
         toggleSpinner('none');
     }
 }
 
 const loadPhoneDetails = phoneId => {
     document.getElementById('phone-detail').innerHTML = '';
+    // console.log(phoneId);
 
     const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`
     fetch(url)
@@ -73,12 +75,12 @@ const loadPhoneDetails = phoneId => {
         .then(data => displayPhoneDetail(data.data))
 }
 const displayPhoneDetail = phone => {
-    // console.log(phone);
+    //  console.log(phone);
     const phoneDetails = document.getElementById('phone-detail');
 
-        const div = document.createElement('div');
-        div.classList.add('card', 'rounded-3');
-        div.innerHTML = `
+    const div = document.createElement('div');
+    div.classList.add('card', 'rounded-3');
+    div.innerHTML = `
         <img src="${phone.image}" class="img-fluid p-5 card-image" alt="...">
             <div class="card-body p-4">
                 <h2 class="card-title text-Success">Phone Name: <span class="text-primary">${phone.brand} ${phone.name}</span></h2>
@@ -100,5 +102,5 @@ const displayPhoneDetail = phone => {
             </div>
     `;
 
-        phoneDetails.appendChild(div);
+    phoneDetails.appendChild(div);
 }
