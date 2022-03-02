@@ -78,25 +78,25 @@ const displayPhoneDetail = phone => {
     const phoneDetails = document.getElementById('phone-detail');
 
     const div = document.createElement('div');
-    div.classList.add('card', 'rounded-3');
+    div.classList.add('card', 'rounded-3', 'border', 'border-dark');
     div.innerHTML = `
         <img src="${phone.image}" class="img-fluid p-5 card-image" alt="...">
             <div class="card-body p-4">
                 <h2 class="card-title text-Success">Phone Name: <span class="text-primary">${phone.brand} ${phone.name}</span></h2>
-                <h4 class="card-text text-success">Release Date: <span class="text-dark">${phone.releaseDate ? phone.releaseDate :'Not found'}</span></h4>
-                <h3 class="card-text text-danger">MAIN FEATURES:</h3>
+                <h4 class="card-text text-success">Release Date: <span class="text-dark">${phone.releaseDate ? phone.releaseDate : 'Not found'}</span></h4>
+                <h3 class="card-text text-danger">MAIN FEATURES:-</h3>
                 <h6 class="card-text text-primary">ChipSet: <span class="text-dark">${phone.mainFeatures.chipSet}</span></h6>
                 <h6 class="card-text text-primary">Display Size: <span class="text-dark">${phone.mainFeatures.displaySize}</span></h6>
-                <h6 class="card-text text-primary">Memory Size: <span class="text-dark">${phone.mainFeatures.memory}</span></h6>
-                <h6 class="card-text text-primary">Storage Size: <span class="text-dark">${phone.mainFeatures.storage}</span></h6>
-                <h3 class="card-text text-danger">OTHERS:</h3>
-                <h6 class="card-text text-primary">Bluetooth: <span class="text-dark">${phone.others.Bluetooth}</span></h6>
-                <h6 class="card-text text-primary">GPS: <span class="text-dark">${phone.others.GPS}</span></h6>
-                <h6 class="card-text text-primary">NFC: <span class="text-dark">${phone.others.NFC}</span></h6>
-                <h6 class="card-text text-primary">Radio: <span class="text-dark">${phone.others.Radio}</span></h6>
-                <h6 class="card-text text-primary">USB: <span class="text-dark">${phone.others.USB}</span></h6>
-                <h6 class="card-text text-primary">WLAN: <span class="text-dark">${phone.others.WLAN}</span></h6>
-                <h3 class="card-text text-danger">SENSORS:</h3>
+                <h6 class="card-text text-primary">Memory Size: <span class="text-dark">${phone.mainFeatures.memory ? phone.mainFeatures.memory : 'Not found'}</span></h6>
+                <h6 class="card-text text-primary">Storage Size: <span class="text-dark">${phone.mainFeatures.storage ? phone.mainFeatures.memory : 'Not found'}</span></h6>
+                <h3 class="card-text text-danger">OTHERS:-</h3>
+                <h6 class="card-text text-primary">Bluetooth: <span class="text-dark">${phone.others.Bluetooth ? phone.others.Bluetooth : 'Not Found'}</span></h6>
+                <h6 class="card-text text-primary">GPS: <span class="text-dark">${phone.others.GPS ? phone.others.GPS : 'Not Found'}</span></h6>
+                <h6 class="card-text text-primary">NFC: <span class="text-dark">${phone.others.NFC ? phone.others.NFC : 'Not Found'}</span></h6>
+                <h6 class="card-text text-primary">Radio: <span class="text-dark">${phone.others.Radio ? phone.others.Radio : 'Not Found'}</span></h6>
+                <h6 class="card-text text-primary">USB: <span class="text-dark">${phone.others.USB ? phone.others.USB : 'Not Found'}</span></h6>
+                <h6 class="card-text text-primary">WLAN: <span class="text-dark">${phone.others.WLAN ? phone.others.WLAN : 'Not Found'}</span></h6>
+                <h3 class="card-text text-danger">SENSORS:-</h3>
                 <h6 class="card-text text-primary">Sensors: <span class="text-dark">${phone.mainFeatures.sensors}</span></h6>
             </div>
     `;
