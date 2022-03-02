@@ -3,10 +3,12 @@ document.getElementById('no-result-message').style.display = 'none';
 document.getElementById('no-detail-message').style.display = 'none';
 document.getElementById('show-all-button').style.display = 'none';
 
+// spinner js 
 const toggleSpinner = displaySpinner => {
     document.getElementById('spinner').style.display = displaySpinner;
 }
 
+// search for phone from search field 
 const searchPhone = () => {
     let searchField = document.getElementById('search-phone');
     let searchTextByUSer = searchField.value;
@@ -32,6 +34,7 @@ const searchPhone = () => {
 
 }
 
+// display all phones 
 const displayPhones = data => {
     let searchResult = document.getElementById('search-result');
 
@@ -64,6 +67,7 @@ const displayPhones = data => {
     }
 }
 
+// get phone key by details search 
 const loadPhoneDetails = phoneId => {
     document.getElementById('phone-detail').innerHTML = '';
     // console.log(phoneId);
@@ -73,6 +77,9 @@ const loadPhoneDetails = phoneId => {
         .then(res => res.json())
         .then(data => displayPhoneDetail(data.data))
 }
+
+// display phone details 
+
 const displayPhoneDetail = phone => {
     //  console.log(phone);
     const phoneDetails = document.getElementById('phone-detail');
@@ -104,6 +111,7 @@ const displayPhoneDetail = phone => {
     phoneDetails.appendChild(div);
 }
 
+// show all phones 
 const showAll = () => {
     let searchField = document.getElementById('search-phone');
     let searchTextByUSer = searchField.value;
@@ -128,6 +136,7 @@ const showAll = () => {
     }
 }
 
+// display all phones 
 const displayAllPhones = data => {
     let searchResult = document.getElementById('search-result');
 
@@ -158,4 +167,31 @@ const displayAllPhones = data => {
         document.getElementById('show-all-button').style.display = 'none';
         toggleSpinner('none');
     }
+}
+
+// back to top button 
+//Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+    ) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }

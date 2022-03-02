@@ -20,6 +20,11 @@
 </head>
 
 <body class="body-background">
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-warning btn-floating btn-lg" id="btn-back-to-top">
+        ⬆
+    </button>
+
     <!-- header section  -->
     <section class="container my-3 mt-2 p-3 rounded border border-1 border-dark header-section-background">
         <header class="container">
@@ -39,15 +44,21 @@
                 aria-label="Please Enter Your Desired Phone Name" aria-describedby="search-button">
             <button onclick="searchPhone()" class="btn btn-dark" type="button" id="search-button">🔎 Search</button>
         </div>
-        <!-- show detail of phone in this section  -->
     </section>
+    <!-- show detail of phone in this section  -->
     <section class="container rounded mt-3 mb-3">
+
         <!-- card detail  -->
+
         <div id="phone-detail" class="w-75 mx-auto d-lg-flex justify-content-lg-center align-items-lg-center">
+
+            <!-- display phone details here  -->
 
         </div>
     </section>
+
     <!-- card section  -->
+
     <section class="container rounded mt-4">
         <!-- spinner      -->
         <div class="loader-bg">
@@ -58,7 +69,7 @@
                 <span></span>
             </div>
         </div>
-        <!-- error messahe  -->
+        <!-- error message  -->
         <p id="error-message" class="text-center text-danger">Something went wrong please try again later</p>
         <p id="no-result-message" class="text-center text-danger">Sorry there is no item with this name. Please Try
             again!!</p>
@@ -66,9 +77,11 @@
             again!!</p>
 
         <!-- card section  -->
-        <div id="search-result" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 mb-3">
 
+        <div id="search-result" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 mb-3">
+            <!-- display all card here  -->
         </div>
+
         <div class="d-grid gap-2 col-6 mx-auto mb-3 mt-5 p-5">
             <button onclick="showAll()" id="show-all-button" class="btn btn-primary" type="button">Show All</button>
         </div>
